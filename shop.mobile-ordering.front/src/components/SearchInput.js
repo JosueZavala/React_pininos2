@@ -55,17 +55,25 @@ render (){
           <header className="App-header">
             <div className="dropdown">
                 <button onClick={this.showMenu} className="dropbtn">Find Locale...</button>
-                <input
-                   type="text"
-                   placeholder="Search.."
-                   id="myInput"
-                   ref={(element) => {
-                     this.dropdownMenu = element;
-                   }}
-                   value={this.state.inputValue}
-                   onChange={evt => this.updateInputValue(evt)}
-                 ></input>
-                  
+
+                    {
+                  this.state.showMenu
+                    ? (
+                       <input
+                          type="text"
+                          placeholder="Search.."
+                          id="myInput"
+                          ref={(element) => {
+                            this.dropdownMenu = element;
+                          }}
+                          value={this.state.inputValue}
+                          onChange={evt => this.updateInputValue(evt)}
+                        ></input>
+                    )
+                    : (
+                      null
+                    )
+                }
 
               </div>
           </header>
