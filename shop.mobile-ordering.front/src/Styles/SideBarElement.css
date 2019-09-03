@@ -1,0 +1,46 @@
+.nav>li {
+    padding: 10px 15px 10px 10px;
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+
+.nav>li:hover, .nav>li:active {
+  outline: none;
+  cursor: pointer;
+  background-position: center center;
+  background: linear-gradient(to left, #53bbbf, #0f1939);
+}
+
+.nav>li:active  {
+  color: #f4623a !important;
+}
+
+
+.nav > li::after{
+  background-color: gray;
+}
+
+.sidebar .nav i {
+    font-size: 28px;
+    float: left;
+    margin-right: 15px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.sidebar .nav p {
+  margin: 0;
+  line-height: 30px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  display: block;
+  height: auto;
+  opacity: 1;
+}
