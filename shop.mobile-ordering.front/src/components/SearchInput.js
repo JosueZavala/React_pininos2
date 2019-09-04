@@ -7,16 +7,32 @@ class SearchInput extends React.Component{
     super(props);
 
     this.state = {
-      inputValue: ''
+      inputValue: '',
+      arrayCards: []
     }
 
   }
 
   updateInputValue(evt) {
+      const eventValue = evt.target.value;
       this.setState({
-        inputValue: evt.target.value
+        inputValue: eventValue
       });
-      console.log(this.state.inputValue);
+      this.searchLocale(eventValue);
+    }
+
+  searchLocale(value){
+
+      if (value != '') {
+        this.setState({
+          arrayCards: this.props.FunctionOnChange(value)
+        });
+      }else {
+        this.setState({
+          arrayCards: []
+        });
+      }
+
     }
 
 render (){
@@ -38,6 +54,9 @@ render (){
               </div>
           </header>
 
+          <div className="row card-Locales-container">
+                {this.state.arrayCards}
+          </div>
 
         </div>
 

@@ -6,51 +6,58 @@ import SearchInput from '../components/SearchInput'
 class Frame extends React.Component{
   constructor(props){
     super(props);
+    this.RenderLocaleCards = this.RenderLocaleCards.bind(this);
 
     this.state = {
       countries: [
         {
-          name:'SWITZERLAND',
-          locale:'FR-SW',
-          isLoyalty: true,
+          Country:'SWITZERLAND',
+          Code:'FR-SW',
+          isShop: true,
         },{
-          name:'SWITZERLAND',
-          locale:'AL-SW',
-          isLoyalty: true,
+          Country:'SWITZERLAND',
+          Code:'AL-SW',
+          isShop: true,
         },{
-          name:'India',
-          locale:'EN-IN',
-          isLoyalty: false,
+          Country:'India',
+          Code:'EN-IN',
+          isShop: false,
         },{
-          name:'Brazil',
-          locale:'PT-br',
-          isLoyalty: false,
+          Country:'Brazil',
+          Code:'PT-br',
+          isShop: false,
         },{
-          name:'Brazil',
-          locale:'PT-br',
-          isLoyalty: false,
+          Country:'Brazil',
+          Code:'PT-br',
+          isShop: false,
         }
       ]
     }
   }
 
-  RenderLocaleCards = () => {
+  RenderLocaleCards(searchValue) {
     const itemsArray = [];
     const countriesJson = this.state.countries;
+    const searchValueUpperCase = searchValue.toUpperCase();
     //console.log(countriesJson);
     countriesJson.forEach((data, index) => {
-      //console.log(data);
-      itemsArray.push(
-        <div className="col-6">
-          <LocaleCard country={data.name} locale={data.locale} key={"locale"+index}/>
-        </div>
-        );
-    });
+      let dataUpperCase = data.Country.toUpperCase();
+      let codeUpperCase = data.Code.toUpperCase();
+
+        if ( dataUpperCase.includes(searchValueUpperCase) ||  codeUpperCase.includes(searchValueUpperCase) ){
+          // debugger;
+          itemsArray.push(
+              <div className="col-6">
+                <LocaleCard country={data.Country} locale={data.Code} key={"locale"+index}/>
+              </div>
+              );
+            }
+          });
     return itemsArray;
   }
 
   render() {
-    const arrayCards = this.RenderLocaleCards();
+    
 
     return (
       <div className="container-fluid">
@@ -71,13 +78,13 @@ class Frame extends React.Component{
 
            <div className="row">
              <div className="col-sm dropDown-container">
-                <SearchInput />
+                <SearchInput
+                  FunctionOnChange =  {this.RenderLocaleCards}
+                />
              </div>
           </div>
 
-          <div className="row card-Locales-container">
-                {arrayCards}
-          </div>
+
       </div>
 
 

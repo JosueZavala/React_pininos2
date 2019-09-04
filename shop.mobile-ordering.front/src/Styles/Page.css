@@ -26,4 +26,5 @@ body {
 .card-Locales-container{
   overflow-y:scroll;
   max-height: 560px;
+  min-width: 660px;
 }
