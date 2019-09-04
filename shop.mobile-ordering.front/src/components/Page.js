@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../Styles/Page.css';
 import SideBar from '../components/SideBar';
 import Frame  from '../components/Frame';
+import '../Styles/Page.css';
+
 
 class Page extends React.Component{
 
