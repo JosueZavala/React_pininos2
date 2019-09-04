@@ -8,7 +8,8 @@ class SearchInput extends React.Component{
 
     this.state = {
       inputValue: '',
-      arrayCards: []
+      arrayCards: [],
+      displayContainer: 'none'
     }
 
   }
@@ -18,18 +19,20 @@ class SearchInput extends React.Component{
       this.setState({
         inputValue: eventValue
       });
-      this.searchLocale(eventValue);
+      this.searchLocale(eventValue)
     }
 
   searchLocale(value){
 
       if (value != '') {
         this.setState({
-          arrayCards: this.props.FunctionOnChange(value)
+          arrayCards: this.props.FunctionOnChange(value),
+          displayContainer: ''
         });
       }else {
         this.setState({
-          arrayCards: []
+          arrayCards: [],
+          displayContainer: 'none'
         });
       }
 
@@ -54,7 +57,12 @@ render (){
               </div>
           </header>
 
-          <div className="row card-Locales-container">
+          <div
+            className="row card-Locales-container"
+            style={{
+                  display: `${this.state.displayContainer}`
+            }}
+          >
                 {this.state.arrayCards}
           </div>
 
