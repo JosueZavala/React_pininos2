@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../Styles/SideBar.css';
 import SideBarElement from '../components/SideBarElement';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import '../Styles/SideBar.css';
 
 class SideBar extends React.Component{
 
@@ -16,14 +18,17 @@ class SideBar extends React.Component{
                 <SideBarElement
                   iconAwesome="fa fa-file-text"
                   title="Generate Catalog"
+                  navTo="/Frame"
                 />
                 <SideBarElement
                   iconAwesome="fa fa-server"
                   title="Warehoses info"
+                  navTo="/"
                 />
                 <SideBarElement
                   iconAwesome="fa fa-money"
                   title="Payment Restrictions"
+                  navTo="/"
                 />
               </ul>
             </div>
