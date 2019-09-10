@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import LocaleCard from '../components/LocaleCard';
 import SearchInput from '../components/SearchInput'
 
-class Frame extends React.Component{
+class CatalogGenerator extends React.Component{
   constructor(props){
     super(props);
     this.RenderLocaleCards = this.RenderLocaleCards.bind(this);
@@ -57,7 +57,7 @@ class Frame extends React.Component{
   }
 
   render() {
-    
+
 
     return (
       <div className="container-fluid">
@@ -65,7 +65,7 @@ class Frame extends React.Component{
         </div>
         <div className="row">
           <div className="title-Module">
-            Generate catalog
+            Catalog Generator
           </div>
         </div>
 
@@ -93,4 +93,4 @@ class Frame extends React.Component{
   }
 }
 
-export default Frame
+export default CatalogGenerator

@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SideBar from '../components/SideBar';
-import Frame  from '../components/Frame';
+import CatalogGenerator  from '../components/CatalogGenerator';
+import WarehosuesInfo  from '../components/WarehosuesInfo';
+import PaymentRestrictions  from '../components/PaymentRestrictions';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import '../Styles/App.css';
 
@@ -19,7 +21,9 @@ class App extends React.Component{
               <div  className="row">
                 <div className="col-6">
                   <Switch>
-                    <Route exact path='/' component={Frame} />
+                    <Route exact path='/' component={CatalogGenerator} />
+                    <Route exact path='/WarehosuesInfo' component={WarehosuesInfo} />
+                    <Route exact path='/PaymentRestrictions' component={PaymentRestrictions} />
                   </Switch>
                 </div>
               </div>

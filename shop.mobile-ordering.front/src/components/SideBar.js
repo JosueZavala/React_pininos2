@@ -12,23 +12,23 @@ class SideBar extends React.Component{
     return (
       <div className="d-flex" id="wrapper">
         <div className="bg-light border-right" id="sidebar-wrapper">
-            <div className="sidebar-heading">Shop Mobile</div>
+            <div className="sidebar-heading">Mobile Tool</div>
             <div className="sidebar">
               <ul className="nav">
                 <SideBarElement
                   iconAwesome="fa fa-file-text"
                   title="Generate Catalog"
-                  navTo="/Frame"
+                  navTo="/"
                 />
                 <SideBarElement
                   iconAwesome="fa fa-server"
                   title="Warehoses info"
-                  navTo="/"
+                  navTo="/WarehosuesInfo"
                 />
                 <SideBarElement
                   iconAwesome="fa fa-money"
                   title="Payment Restrictions"
-                  navTo="/"
+                  navTo="/PaymentRestrictions"
                 />
               </ul>
             </div>
