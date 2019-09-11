@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SideBar from '../components/SideBar';
 import CatalogGenerator  from '../components/CatalogGenerator';
-import WarehosuesInfo  from '../components/WarehosuesInfo';
+import WareHosuesInfo  from '../components/WareHosuesInfo';
 import PaymentRestrictions  from '../components/PaymentRestrictions';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import '../Styles/App.css';
@@ -22,7 +22,7 @@ class App extends React.Component{
                 <div className="col-6">
                   <Switch>
                     <Route exact path='/' component={CatalogGenerator} />
-                    <Route exact path='/WarehosuesInfo' component={WarehosuesInfo} />
+                    <Route exact path='/WareHosuesInfo' component={WareHosuesInfo} />
                     <Route exact path='/PaymentRestrictions' component={PaymentRestrictions} />
                   </Switch>
                 </div>

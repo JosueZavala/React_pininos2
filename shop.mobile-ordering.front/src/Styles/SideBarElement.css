@@ -30,6 +30,7 @@
     line-height: 30px;
     width: 30px;
     text-align: center;
+    color: white;
 }
 
 .sidebar .nav p {
@@ -43,4 +44,5 @@
   display: block;
   height: auto;
   opacity: 1;
+  color: white;
 }

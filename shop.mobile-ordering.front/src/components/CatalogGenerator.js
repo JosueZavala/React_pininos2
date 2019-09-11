@@ -61,8 +61,6 @@ class CatalogGenerator extends React.Component{
 
     return (
       <div className="container-fluid">
-        <div className="page-header">
-        </div>
         <div className="row">
           <div className="title-Module">
             Catalog Generator

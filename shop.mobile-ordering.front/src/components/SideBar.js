@@ -23,7 +23,7 @@ class SideBar extends React.Component{
                 <SideBarElement
                   iconAwesome="fa fa-server"
                   title="Warehoses info"
-                  navTo="/WarehosuesInfo"
+                  navTo="/WareHosuesInfo"
                 />
                 <SideBarElement
                   iconAwesome="fa fa-money"
