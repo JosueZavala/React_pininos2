@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import WareHosuesTable  from '../components/WareHosuesTable';
+import WHTable  from '../components/WHTable';
+import SearchInput from '../components/SearchInput';
 
 
 class WareHosuesInfo extends React.Component{
-
   render() {
 
     return (
@@ -15,7 +15,12 @@ class WareHosuesInfo extends React.Component{
           </div>
         </div>
         <div className="row">
-          <WareHosuesTable />
+            <div className="container">
+              <div className="col-sm dropDown-container">
+                <SearchInput />
+              </div>
+              <WHTable />
+            </div>
         </div>
       </div>
     );

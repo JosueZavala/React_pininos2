@@ -19,7 +19,7 @@ class App extends React.Component{
             </div>
             <div className="col-9">
               <div  className="row">
-                <div className="col-6">
+                <div className="col-12">
                   <Switch>
                     <Route exact path='/' component={CatalogGenerator} />
                     <Route exact path='/WareHosuesInfo' component={WareHosuesInfo} />
