@@ -41,14 +41,14 @@ class WHTable extends React.Component{
                 <td>Retira en Debenedetti (Persona)</td>
                 <td>YES</td>
                 <td>NO</td>
-                <td className="text-center"><div className="btn btn-primary btn-sm"><i className="fa fa-pencil-square"></i></div></td>
+                <td className="text-center"><div className="btn btn-primary btn-sm" onClick={handleShow}><i className="fa fa-pencil-square"></i></div></td>
               </tr>
               <tr>
                 <td>DUP-001-32</td>
                 <td>Retira en Debenedetti (Comisionista)</td>
                 <td>YES</td>
                 <td>NO</td>
-                <td className="text-center"><div className="btn btn-primary btn-sm"><i className="fa fa-pencil-square"></i></div></td>
+                <td className="text-center"><div className="btn btn-primary btn-sm" onClick={handleShow}><i className="fa fa-pencil-square"></i></div></td>
               </tr>
             </tbody>
           </table>

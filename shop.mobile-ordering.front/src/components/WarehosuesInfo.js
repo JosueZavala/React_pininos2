@@ -17,7 +17,9 @@ class WareHosuesInfo extends React.Component{
         <div className="row">
             <div className="container">
               <div className="col-sm dropDown-container">
-                <SearchInput />
+                <SearchInput
+                  FunctionOnChange = {(a) => console.log(a)}
+                />
               </div>
               <WHTable />
             </div>
