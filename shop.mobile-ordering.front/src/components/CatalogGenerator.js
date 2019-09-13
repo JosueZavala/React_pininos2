@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import LocaleCard from '../components/LocaleCard';
 import SearchInput from '../components/SearchInput'
 
@@ -31,21 +30,23 @@ class CatalogGenerator extends React.Component{
           Code:'PT-br',
           isShop: false,
         }
-      ]
+      ],
+      arrayCards: [],
+      displayContainer: 'none'
     }
   }
 
   RenderLocaleCards(searchValue) {
+    console.log(searchValue);
     const itemsArray = [];
     const countriesJson = this.state.countries;
     const searchValueUpperCase = searchValue.toUpperCase();
-    //console.log(countriesJson);
+
     countriesJson.forEach((data, index) => {
       let dataUpperCase = data.Country.toUpperCase();
       let codeUpperCase = data.Code.toUpperCase();
 
         if ( dataUpperCase.includes(searchValueUpperCase) ||  codeUpperCase.includes(searchValueUpperCase) ){
-          // debugger;
           itemsArray.push(
               <div className="col-6">
                 <LocaleCard country={data.Country} locale={data.Code} key={"locale"+index}/>
@@ -53,7 +54,21 @@ class CatalogGenerator extends React.Component{
               );
             }
           });
-    return itemsArray;
+    this.UpdateSetState(itemsArray, searchValue);
+  }
+
+  UpdateSetState(itemsArray, searchValue){
+      if (searchValue !== '') {
+       this.setState({
+         arrayCards: itemsArray,
+         displayContainer: ''
+       });
+     }else {
+       this.setState({
+         arrayCards: [],
+         displayContainer: 'none'
+       });
+     }
   }
 
   render() {
@@ -79,6 +94,14 @@ class CatalogGenerator extends React.Component{
                 <SearchInput
                   FunctionOnChange =  {this.RenderLocaleCards}
                 />
+                <div
+                  className="row card-Locales-container"
+                  style={{
+                        display: `${this.state.displayContainer}`
+                  }}
+                >
+                      {this.state.arrayCards}
+                </div>
              </div>
           </div>
 

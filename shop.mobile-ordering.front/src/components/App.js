@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import SideBar from '../components/SideBar';
 import CatalogGenerator  from '../components/CatalogGenerator';
 import WareHosuesInfo  from '../components/WareHosuesInfo';

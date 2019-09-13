@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import WHTable  from '../components/WHTable';
 import SearchInput from '../components/SearchInput';
 

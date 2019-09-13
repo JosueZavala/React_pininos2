@@ -1,8 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import SideBarElement from '../components/SideBarElement';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import '../Styles/SideBar.css';
 
 class SideBar extends React.Component{

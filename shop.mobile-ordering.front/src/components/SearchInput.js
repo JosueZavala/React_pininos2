@@ -1,5 +1,4 @@
 import React from 'react';
-import LocaleCard from './LocaleCard';
 import '../Styles/SearchImput.css';
 
 class SearchInput extends React.Component{
@@ -7,9 +6,7 @@ class SearchInput extends React.Component{
     super(props);
 
     this.state = {
-      inputValue: '',
-      arrayCards: [],
-      displayContainer: 'none'
+      inputValue: ''
     }
 
   }
@@ -19,24 +16,10 @@ class SearchInput extends React.Component{
       this.setState({
         inputValue: eventValue
       });
-      this.searchLocale(eventValue)
+      this.props.FunctionOnChange(eventValue)
     }
 
-  searchLocale(value){
 
-      if (value != '') {
-        this.setState({
-          arrayCards: this.props.FunctionOnChange(value),
-          displayContainer: ''
-        });
-      }else {
-        this.setState({
-          arrayCards: [],
-          displayContainer: 'none'
-        });
-      }
-
-    }
 
 render (){
       return (
@@ -56,16 +39,6 @@ render (){
                  ></input>
               </div>
           </header>
-
-          <div
-            className="row card-Locales-container"
-            style={{
-                  display: `${this.state.displayContainer}`
-            }}
-          >
-                {this.state.arrayCards}
-          </div>
-
         </div>
 
       );

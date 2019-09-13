@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../Styles/LocaleCard.css';
 import SweetAlert from 'sweetalert2-react';
 
