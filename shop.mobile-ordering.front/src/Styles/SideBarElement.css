@@ -10,8 +10,10 @@
 .nav>li:hover, .nav>li:active {
   outline: none;
   cursor: pointer;
-  background-position: center center;
-  background: linear-gradient(to left, #53bbbf, #0f1939);
+  background-position: ceter center;
+  background: linear-gradient(to right, #009C0D, #A2DBA7);
+  color: gray !important;
+
 }
 
 .nav>li:active  {

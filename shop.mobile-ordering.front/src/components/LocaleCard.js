@@ -26,7 +26,7 @@ class LocaleCard extends React.Component{
 
   render() {
     return(
-      <div className="Locale-container">
+      <div className={"Locale-container "+ (this.props.isShop ? '' : 'isLegacyClass')}>
         <div className="Title-Locale">
           {this.props.country}
         </div>

@@ -28,3 +28,7 @@
 .action-button{
   margin-right: 2rem;
 }
+
+.isLegacyClass{
+  background-color: #F27C62
+}

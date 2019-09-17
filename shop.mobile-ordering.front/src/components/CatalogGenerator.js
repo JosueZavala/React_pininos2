@@ -49,7 +49,7 @@ class CatalogGenerator extends React.Component{
         if ( dataUpperCase.includes(searchValueUpperCase) ||  codeUpperCase.includes(searchValueUpperCase) ){
           itemsArray.push(
               <div className="col-6">
-                <LocaleCard country={data.Country} locale={data.Code} key={"locale"+index}/>
+                <LocaleCard country={data.Country} locale={data.Code} isShop={data.isShop} key={"locale"+index}/>
               </div>
               );
             }
