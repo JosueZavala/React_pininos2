@@ -77,8 +77,7 @@ class WareHosuesInfo extends React.Component{
       ],
       arrayTuple: [],
       displayContainer: 'none',
-      notFoundMessage: '',
-      comment: ""
+      notFoundMessage: ''
     };
   }
 
