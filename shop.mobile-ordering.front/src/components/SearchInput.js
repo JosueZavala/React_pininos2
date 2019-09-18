@@ -6,7 +6,8 @@ class SearchInput extends React.Component{
     super(props);
 
     this.state = {
-      inputValue: ''
+      inputValue: '',
+      Message: ''
     }
 
   }
@@ -14,7 +15,8 @@ class SearchInput extends React.Component{
   updateInputValue(evt) {
       const eventValue = evt.target.value;
       this.setState({
-        inputValue: eventValue
+        inputValue: eventValue,
+        Message: this.props.Message,
       });
       this.props.FunctionOnChange(eventValue)
     }
@@ -23,9 +25,8 @@ class SearchInput extends React.Component{
 
 render (){
       return (
-        <div className="App">
-          <header className="App-header">
-            <div className="dropdown">
+        <div className="row SearchInput">
+            <div className="col-5 input-container">
                 <button className="dropbtn">Find Locale...</button>
                 <input
                    type="text"
@@ -37,8 +38,8 @@ render (){
                    value={this.state.inputValue}
                    onChange={evt => this.updateInputValue(evt)}
                  ></input>
-              </div>
-          </header>
+            </div>
+            <div className="col-7 mesage-container">{this.props.Message}</div>
         </div>
 
       );

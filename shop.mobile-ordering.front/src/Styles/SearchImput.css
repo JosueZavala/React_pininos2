@@ -7,6 +7,15 @@
   cursor: pointer;
 }
 
+.input-container{
+
+}
+
+.mesage-container{
+  text-align: center;
+  font-size: 24px;
+}
+
 .dropbtn:hover, .dropbtn:focus {
   background-color: #3e8e41;
 }

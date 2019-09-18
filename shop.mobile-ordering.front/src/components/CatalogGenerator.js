@@ -32,12 +32,12 @@ class CatalogGenerator extends React.Component{
         }
       ],
       arrayCards: [],
-      displayContainer: 'none'
+      displayContainer: 'none',
+      notFoundMessage: ''
     }
   }
 
   RenderLocaleCards(searchValue) {
-    console.log(searchValue);
     const itemsArray = [];
     const countriesJson = this.state.countries;
     const searchValueUpperCase = searchValue.toUpperCase();
@@ -58,15 +58,17 @@ class CatalogGenerator extends React.Component{
   }
 
   UpdateSetState(itemsArray, searchValue){
-      if (searchValue !== '') {
+      if (searchValue !== '' && itemsArray.length > 0) {
        this.setState({
          arrayCards: itemsArray,
-         displayContainer: ''
+         displayContainer: '',
+         notFoundMessage: '',
        });
      }else {
        this.setState({
          arrayCards: [],
-         displayContainer: 'none'
+         displayContainer: 'none',
+         notFoundMessage: 'Any country or Locale found with: ' + searchValue,
        });
      }
   }
@@ -93,14 +95,13 @@ class CatalogGenerator extends React.Component{
              <div className="col-sm dropDown-container">
                 <SearchInput
                   FunctionOnChange =  {this.RenderLocaleCards}
+                  Message = {this.state.notFoundMessage}
                 />
                 <div
                   className="row card-Locales-container"
-                  style={{
-                        display: `${this.state.displayContainer}`
-                  }}
-                >
-                      {this.state.arrayCards}
+                  style={{ display: `${this.state.displayContainer}`}}
+                  >
+                  {this.state.arrayCards}
                 </div>
              </div>
           </div>
