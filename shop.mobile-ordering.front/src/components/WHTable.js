@@ -2,8 +2,8 @@ import React from 'react';
 import MyModal  from '../components/MyModal';
 
 class WHTable extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
     this.state = {
       show : false,
@@ -27,29 +27,7 @@ class WHTable extends React.Component{
                 <th>Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>A9</td>
-                <td>QRC Cordoba</td>
-                <td>YES</td>
-                <td>NO</td>
-                <td className="text-center"><div className="btn btn-primary btn-sm" onClick={handleShow}><i className="fa fa-pencil-square"></i></div></td>
-              </tr>
-              <tr>
-                <td>DUP-004-32</td>
-                <td>Retira en Debenedetti (Persona)</td>
-                <td>YES</td>
-                <td>NO</td>
-                <td className="text-center"><div className="btn btn-primary btn-sm" onClick={handleShow}><i className="fa fa-pencil-square"></i></div></td>
-              </tr>
-              <tr>
-                <td>DUP-001-32</td>
-                <td>Retira en Debenedetti (Comisionista)</td>
-                <td>YES</td>
-                <td>NO</td>
-                <td className="text-center"><div className="btn btn-primary btn-sm" onClick={handleShow}><i className="fa fa-pencil-square"></i></div></td>
-              </tr>
-            </tbody>
+            <tbody>{this.props.tupleArray}</tbody>
           </table>
           <MyModal
             show={this.state.show}
